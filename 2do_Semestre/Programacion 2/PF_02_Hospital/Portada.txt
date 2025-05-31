@@ -1,0 +1,29 @@
+       		
+		******************  Proyecto Final. (Equipo 02) Hospital  ******************
+                -----------------------------------------------------------------------------
+
+		Objetivo: Tomando como base al programa Hospital - varios archivos (base para 
+			  proyecto final), realizar las siguientes tareas:
+
+		1. Completar el código. Hay funciones que están vacías y otras que tienen 
+		   "código duro". Cada una de ellas debe ser completada. Considerar las 
+		   recomendaciones en los comentarios que se incluyeron en el código.
+
+		2. Gráficas. Crear dos gráficas (que se podrán consultar mediante un submenú) 
+		   utilizando los datos del costo de las consultas que está en el archivo de 
+		   las consultas. Las gráficas serán:
+
+		   Gráfica de barras con las ganancias de cada uno de los doctores. 
+		   Cada barra mostrará el nombre del doctor y la ganancia.
+
+		   Gráfica de pastel donde se muestre el porcentaje de las ganancias de cada 
+                   doctor con respecto a las ganancias TOTALES del hospital. Cada rebanada 
+                   mostrará el porcentaje y en la parte derecha estarán los nombres de los 
+                   doctores con un cuadro del color correspondiente a su rebanada.
+		
+
+		Domínguez García Juan Alberto    			Grupo 2205
+		Pineda Ortega Daniel
+		Torres Machorro Antonio
+		Trejo Reséndiz Alan Giovanny 
+                         
