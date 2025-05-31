@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1686416936 source:c:\users\daniel\downloads\pf_02_hospital\pf_02_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<winbgim.h>
+	"graficas.h"
+
+1266115814 c:\users\daniel\desktop\codeblocks-ep-r- graph\sdk\winbgim\include\winbgim.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+
+1686416909 c:\users\daniel\downloads\pf_02_hospital\graficas.h
+	<stdio.h>
+	<stdlib.h>
+	<winbgim.h>
+	<time.h>
+
+1686416936 source:c:\users\daniel\onedrive\documentos\licenciatura en matematicas aplicadas y computacion\2do. semestre 2205\programacion 2\programas\proyecto final\pf_02_hospital\pf_02_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<winbgim.h>
+	"graficas.h"
+
+1686445431 c:\users\daniel\onedrive\documentos\licenciatura en matematicas aplicadas y computacion\2do. semestre 2205\programacion 2\programas\proyecto final\pf_02_hospital\graficas.h
+	<stdio.h>
+	<stdlib.h>
+	<winbgim.h>
+	<math.h>
+	<time.h>
+
+1686416938 source:c:\users\danws\desktop\pf_02_hospital\pf_02_hospital.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	<winbgim.h>
+	"graficas.h"
+
+1686445432 c:\users\danws\desktop\pf_02_hospital\graficas.h
+	<stdio.h>
+	<stdlib.h>
+	<winbgim.h>
+	<math.h>
+	<time.h>
+
