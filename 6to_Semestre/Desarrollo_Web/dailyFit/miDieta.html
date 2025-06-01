@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Dieta</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-4">
+        <h1 class="text-center">Mi Dieta</h1>
+        <h3 class="mt-4">Plan Nutricional</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Comida</th>
+                    <th>Descripción</th>
+                    <th>Calorías</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Desayuno</td>
+                    <td>Avena con leche, plátano y nueces</td>
+                    <td>450</td>
+                </tr>
+                <tr>
+                    <td>Almuerzo</td>
+                    <td>Pollo a la plancha con arroz integral y brócoli</td>
+                    <td>600</td>
+                </tr>
+                <tr>
+                    <td>Cena</td>
+                    <td>Salmón con ensalada de espinacas y aguacate</td>
+                    <td>500</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    // Cargar la barra de navegación en el contenedor
+    $(function() {
+        $("#navbar-placeholder").load("barraNavegacionUsuario.html");
+    });
+</script>
+
+</body>
+</html>
