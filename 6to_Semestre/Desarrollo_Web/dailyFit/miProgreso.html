@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Progreso</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    
+    <div class="container mt-4">
+        <h1 class="text-center">Mi Progreso</h1>
+        
+        <!-- Espalda -->
+        <h3 class="mt-4">Espalda</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Dominadas</h5>
+                <canvas id="backExercise1"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Remo con barra</h5>
+                <canvas id="backExercise2"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Pull-down</h5>
+                <canvas id="backExercise3"></canvas>
+            </div>
+        </div>
+
+        <!-- Pecho -->
+        <h3 class="mt-4">Pecho</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Press de banca</h5>
+                <canvas id="chestExercise1"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Aperturas</h5>
+                <canvas id="chestExercise2"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Press inclinado</h5>
+                <canvas id="chestExercise3"></canvas>
+            </div>
+        </div>
+
+        <!-- Piernas -->
+        <h3 class="mt-4">Piernas</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Sentadilla</h5>
+                <canvas id="legExercise1"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Prensa</h5>
+                <canvas id="legExercise2"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Extensiones</h5>
+                <canvas id="legExercise3"></canvas>
+            </div>
+        </div>
+
+        <!-- Brazos -->
+        <h3 class="mt-4">Brazos</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Curl de bíceps</h5>
+                <canvas id="armExercise1"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Fondos</h5>
+                <canvas id="armExercise2"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h5>Extensiones de tríceps</h5>
+                <canvas id="armExercise3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const renderChart = (id, labels, data) => {
+            new Chart(document.getElementById(id), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Progreso',
+                        data: data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        fill: false
+                    }]
+                }
+            });
+        };
+
+        // Espalda
+        renderChart('backExercise1', ['Semana 1', 'Semana 2', 'Semana 3'], [50, 60, 70]);
+        renderChart('backExercise2', ['Semana 1', 'Semana 2', 'Semana 3'], [40, 55, 65]);
+        renderChart('backExercise3', ['Semana 1', 'Semana 2', 'Semana 3'], [30, 50, 60]);
+
+        // Pecho
+        renderChart('chestExercise1', ['Semana 1', 'Semana 2', 'Semana 3'], [60, 75, 90]);
+        renderChart('chestExercise2', ['Semana 1', 'Semana 2', 'Semana 3'], [40, 60, 80]);
+        renderChart('chestExercise3', ['Semana 1', 'Semana 2', 'Semana 3'], [50, 65, 85]);
+
+        // Piernas
+        renderChart('legExercise1', ['Semana 1', 'Semana 2', 'Semana 3'], [70, 80, 90]);
+        renderChart('legExercise2', ['Semana 1', 'Semana 2', 'Semana 3'], [60, 75, 85]);
+        renderChart('legExercise3', ['Semana 1', 'Semana 2', 'Semana 3'], [50, 70, 80]);
+
+        // Brazos
+        renderChart('armExercise1', ['Semana 1', 'Semana 2', 'Semana 3'], [40, 55, 65]);
+        renderChart('armExercise2', ['Semana 1', 'Semana 2', 'Semana 3'], [30, 45, 60]);
+        renderChart('armExercise3', ['Semana 1', 'Semana 2', 'Semana 3'], [35, 50, 70]);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // Cargar la barra de navegación en el contenedor
+        $(function() {
+            $("#navbar-placeholder").load("./barraNavegacionUsuario.html");
+        });
+    </script>
+</body>
+</html>

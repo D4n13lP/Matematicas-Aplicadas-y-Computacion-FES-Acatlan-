@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Rutina</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-4">
+        <h1 class="text-center">Mi Rutina</h1>
+        <h3 class="mt-4">Rutina Asignada</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Ejercicios</th>
+                    <th>Series y Repeticiones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunes</td>
+                    <td>Press de banca, Sentadilla</td>
+                    <td>4x10, 4x12</td>
+                </tr>
+                <tr>
+                    <td>Miércoles</td>
+                    <td>Dominadas, Peso muerto</td>
+                    <td>3x8, 3x10</td>
+                </tr>
+                <tr>
+                    <td>Viernes</td>
+                    <td>Press militar, Curl de bíceps</td>
+                    <td>4x10, 3x12</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // Cargar la barra de navegación en el contenedor
+        $(function() {
+            $("#navbar-placeholder").load("./barraNavegacionUsuario.html");
+        });
+    </script>
+</body>
+</html>
