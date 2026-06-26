@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Vite guarda la compilación en la carpeta 'dist' dentro de tu proyecto
-          path: './Multimedia_programming/sampler-dsp/dist'
+          path: './Multimedia_programming/sampler-dsp/dist/'
 
       - name: Deploy to GitHub Pages
         id: deployment
