@@ -1,0 +1,68 @@
+name: Deploy a GitHub Pages
+
+# Se ejecuta automáticamente en cada push a la rama principal,
+# o manualmente desde la pestaña "Actions" del repositorio.
+"on":
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permisos mínimos necesarios para publicar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita que dos despliegues corran a la vez; si llega un push nuevo
+# mientras uno está en curso, se cancela el anterior.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # IMPORTANTE: el proyecto vive en una subcarpeta del repo, no en la raíz.
+          # Esto le dice a actions/setup-node dónde buscar el package-lock.json
+          # para poder usar caché de dependencias.
+          cache: 'npm'
+          cache-dependency-path: Multimedia_programming/sampler-dsp/package-lock.json
+
+      - name: Instalar dependencias
+        # El proyecto vive en Multimedia_programming/sampler-dsp/ dentro del repo,
+        # así que todos los comandos de npm deben ejecutarse desde ahí.
+        working-directory: Multimedia_programming/sampler-dsp
+        run: npm ci
+
+      - name: Compilar el proyecto (npm run build)
+        working-directory: Multimedia_programming/sampler-dsp
+        run: npm run build
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir el resultado del build (carpeta dist/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Ruta relativa a la raíz del repo, apuntando al dist/ generado
+          # dentro de la subcarpeta del proyecto.
+          path: Multimedia_programming/sampler-dsp/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
