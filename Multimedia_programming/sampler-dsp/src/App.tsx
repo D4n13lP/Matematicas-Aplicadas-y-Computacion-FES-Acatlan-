@@ -293,7 +293,7 @@ export default function App() {
             */}
             <div className="flex justify-center xl:flex-1 xl:min-h-0 xl:items-start">
               <img
-                src="/logo.gif"
+                src={`${import.meta.env.BASE_URL}logo.gif`}
                 alt="Logo animado DSP AudioPad"
                 className="max-w-full xl:max-h-full w-auto h-auto object-contain"
               />

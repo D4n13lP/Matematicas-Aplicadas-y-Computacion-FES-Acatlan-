@@ -36,6 +36,33 @@ Genera la carpeta `dist/` lista para subir a Netlify.
    - Build command: `npm run build`
    - Publish directory: `dist`
 
+## Deploy en GitHub Pages
+
+El proyecto ya está configurado con `base: './'` en `vite.config.ts`, así que el
+build funciona tanto en la raíz de un dominio (Netlify) como en una subcarpeta
+(`https://usuario.github.io/nombre-repo/`), que es como GitHub Pages publica los
+repos normales.
+
+### Opción A — Subir la carpeta `dist/` directamente (más simple)
+1. Correr `npm run build`
+2. Crear/usar un repositorio en GitHub y subir el **contenido** de `dist/`
+   (no la carpeta completa, sino sus archivos) a la rama `main` (o a una rama
+   `gh-pages`)
+3. En GitHub → Settings → Pages → Source, elegir esa rama y la carpeta raíz `/`
+4. Esperar uno o dos minutos y abrir la URL que GitHub Pages indique
+
+### Opción B — GitHub Actions (automático en cada push)
+1. Subir el código fuente completo del proyecto (no `dist/`) a GitHub
+2. En GitHub → Settings → Pages → Source, elegir **GitHub Actions**
+3. Usar un workflow estándar de Vite + GitHub Pages (build con `npm run build`
+   y publicar el contenido de `dist/`); GitHub sugiere una plantilla lista
+   para Vite al elegir esta opción
+
+> Nota: si en algún momento cambias `base: './'` por una ruta fija como
+> `base: '/nombre-repo/'`, asegúrate de que coincida exactamente con el nombre
+> del repositorio, o las rutas de los assets (CSS, JS, `logo.gif`) no se
+> resolverán correctamente.
+
 ## Controles
 
 | Tecla | Pad      |
@@ -48,6 +75,7 @@ Genera la carpeta `dist/` lista para subir a Netlify.
 | S     | Tom      |
 | D     | Bass     |
 | F     | Synth    |
+| G     | Voz      |
 
 ## Grafo de Audio (AudioGraph)
 
@@ -62,4 +90,5 @@ AudioDestinationNode (bocinas)
 ```
 
 - **playbackRate** del BufferSource: controlado por slider "Velocidad de reproducción"
-- Todos los samples son **sintetizados en memoria** (sin archivos externos)
+- 8 de los 9 pads son **sintetizados en memoria** (osciladores y ruido, sin archivos externos)
+- El pad **Voz** reproduce un sample de audio real, decodificado desde un data URI embebido en el código
