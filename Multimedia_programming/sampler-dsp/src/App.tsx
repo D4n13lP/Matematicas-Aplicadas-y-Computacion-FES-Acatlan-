@@ -4,6 +4,7 @@ import Pad, { PadDef } from './Pad'
 import InfoPanel from './InfoPanel'
 import Logo from './Logo'
 import BuildStory from './BuildStory'
+import AnimatedBackground from './AnimatedBackground'
 import {
   genKick, genSnare, genHHclosed, genHHopen,
   genClap, genTom, genBass, genSynth, loadVozSample,
@@ -164,10 +165,34 @@ export default function App() {
       : `${filterFreq} Hz`
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f]">
+    <div className="min-h-screen bg-[#0f0f0f] relative">
 
-      {/* ── Encabezado (ancho completo) ── */}
-      <header className="font-heading w-full border-b border-zinc-800 px-4 sm:px-8 py-5">
+      {/* ── Fondo animado: cometas con cola y cubos flotando ── */}
+      <AnimatedBackground />
+
+      {/* ── Encabezado (ancho completo, con imagen de ondas de sonido de fondo) ── */}
+      <header className="font-heading relative z-10 w-full border-b border-zinc-800 px-4 sm:px-8 py-5 overflow-hidden">
+        {/* Imagen de fondo del encabezado, atenuada para no competir con el texto */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10"
+          style={{
+            backgroundImage: `url(${import.meta.env.BASE_URL}header-bg.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.28,
+          }}
+        />
+        {/* Degradado para apagar aún más la imagen cerca del texto y unificarla con el fondo oscuro */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.55) 45%, rgba(15,15,15,0.85) 100%)',
+          }}
+        />
+
         <div className="flex items-center gap-5">
           <Logo size={88} />
           <div className="flex flex-col gap-1 min-w-0">
@@ -192,7 +217,7 @@ export default function App() {
       </header>
 
       {/* ── Contenido ── */}
-      <main className="px-4 sm:px-8 py-6 max-w-[1400px] mx-auto">
+      <main className="relative z-10 px-4 sm:px-8 py-6 max-w-[1400px] mx-auto">
 
         {/* ── Monitor de waveform (siempre arriba, ancho completo del contenido) ── */}
         <Waveform
