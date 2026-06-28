@@ -1,0 +1,2 @@
+NURBS:Non-Uniform Rational B-Splines. Permite representar curvas complejas con alta precision.
+CARDIOIDE:Curva epicicloide de un solo cuspide, modelada mediante puntos de control y pesos.

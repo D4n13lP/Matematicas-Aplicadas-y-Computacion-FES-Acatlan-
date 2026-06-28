@@ -1,0 +1,10 @@
+GL_POINTS: Puntos individuales.
+GL_LINES: Pares de vertices como segmentos.
+GL_LINE_STRIP: Linea continua conectada.
+GL_LINE_LOOP: Bucle cerrado de lineas.
+GL_TRIANGLES: Triangulos independientes.
+GL_TRIANGLE_STRIP: Tira de triangulos compartiendo lados.
+GL_TRIANGLE_FAN: Abanico de triangulos.
+GL_QUADS: Cuadrilateros (4 lados).
+GL_QUAD_STRIP: Tira de cuadrilateros.
+GL_POLYGON: Poligono convexo general.

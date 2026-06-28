@@ -1,0 +1,2 @@
+ALGORITMO DDA: Calcula la pendiente y recorre el eje dominante sumando incrementos fraccionarios.
+ALGORITMO BRESENHAM: Utiliza solo aritmetica de enteros para decidir el siguiente pixel, siendo mas eficiente.

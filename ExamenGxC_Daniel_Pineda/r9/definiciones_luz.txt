@@ -1,0 +1,2 @@
+Luz global: ilumina el conjunto de la escena, con un efecto mas uniforme.
+Luz puntual: ilumina un area especifica, con haz más estrecho y mayor concentracion de luz.
